@@ -18,8 +18,6 @@ To set up the EC2 start stop function using CloudWatch Events, you will need to 
 
 1. Lambda Execution Role: You need to create an IAM role that can be assumed by the AWS Lambda service. This role should have the necessary permissions to execute the Lambda function and interact with EC2 instances. At a minimum, the role should have the AWSLambdaBasicExecutionRole policy attached to it. Additionally, you can attach policies such as AmazonEC2FullAccess or a custom policy with the required EC2 permissions.
 
-2. CloudWatch Events Rule Role: When creating a CloudWatch Events rule, you have the option to specify an IAM role that is assumed by CloudWatch Events to execute the rule's target. This role should have permissions to invoke the Lambda function associated with the rule. The minimum required permission is lambda:InvokeFunction for the specific Lambda function.
-
 Ensure that you have appropriate permissions to create IAM roles and policies. Typically, you would need administrative privileges or permissions to manage IAM resources.
 
 Here's a summary of the necessary permissions for the IAM roles:
@@ -28,10 +26,6 @@ For Lambda Execution Role:
 
 - AWSLambdaBasicExecutionRole
 - EC2 permissions (e.g., See below simple policy)
-
-For CloudWatch Events Rule Role:
-
-- lambda:InvokeFunction (for the specific Lambda function)
 
 By setting up the IAM roles with the required permissions, you can ensure that the Lambda function and CloudWatch Events have the necessary access to execute the EC2 start stop function.
 
